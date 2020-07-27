@@ -11,6 +11,9 @@
     "paths": {
       "*": ["node_modules/*"]
     },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
     "lib": ["es2015"]
   },
   "include": ["src/**/*"]
