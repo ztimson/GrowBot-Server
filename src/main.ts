@@ -7,22 +7,28 @@ import * as http from 'http';
 import CORS from 'cors';
 import {CameraConnectionService} from "./services/cameraConnectionService";
 import {TimelapseController} from "./controllers/timelapseController";
+import {ClimateService} from "./services/climateService";
+import {FanController} from "./controllers/fanController";
+import {LightController} from "./controllers/lightController";
 
-// Setup server
+// Configuration
 const app = express()
 const server = http.createServer(app);
 const socket = SocketIO(server);
+app.use(express.json());
 app.use(CORS({origin: environment.cors, credentials: true}));
-
-// config
 const config = new ConfigStore('grow-bot', environment.defaultConfig);
+config.set(environment.defaultConfig);
 
-// Setup camera
+// Services
 const camera = new CameraService();
 const cameraConnectionService = new CameraConnectionService(socket, camera);
+const climateService = new ClimateService();
 
-// REST API
-TimelapseController(app, camera);
+// Controllers
+FanController(app, config, climateService);
+LightController(app, config, climateService);
+TimelapseController(app, config, camera);
 
 // Start server
 server.listen(environment.port, () => console.log(`Starting Server: http://localhost:${environment.port}`));

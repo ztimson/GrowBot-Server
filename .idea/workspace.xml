@@ -23,7 +23,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Development/MapAlliance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MapAlliance" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,7 +37,11 @@
       <option name="presentableId" value="Default" />
       <updated>1595781522757</updated>
       <workItem from="1595781524457" duration="5000" />
+      <workItem from="1597090796290" duration="59000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
 </project>
